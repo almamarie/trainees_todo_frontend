@@ -88,9 +88,40 @@ class HomeView extends StatelessWidget {
       ),
       bottomNavigationBar: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 8.w),
-          child: SizedBox(
-            height: 60,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.circular(9.r),
+            ),
+            height: 50.h,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const Icon(
+                        Icons.check_circle,
+                      ),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      const Text("Completed"),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      const Icon(
+                        Icons.keyboard_arrow_down,
+                      )
+                    ],
+                  ),
+                  const Text("24")
+                ],
+              ),
+            ),
           ),
         ),
       ),
