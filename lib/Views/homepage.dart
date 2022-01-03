@@ -33,64 +33,66 @@ class HomeView extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
-        child: ListView(
-          children: [
-            ListView.separated(
-              shrinkWrap: true,
-              separatorBuilder: (context, index) {
-                return SizedBox(
-                  height: 10.h,
-                );
-              },
-              itemCount: 20,
-              itemBuilder: (context, index) {
-                return SizedBox(
-                  height: 60.h,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ListView.separated(
+          separatorBuilder: (context, index) {
+            return SizedBox(
+              height: 10.h,
+            );
+          },
+          itemCount: 20,
+          itemBuilder: (context, index) {
+            return SizedBox(
+              height: 60.h,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
                     children: [
-                      Row(
-                        children: [
-                          const Icon(Icons.check_circle),
-                          SizedBox(
-                            width: 7.h,
+                      const Icon(Icons.check_circle),
+                      SizedBox(
+                        width: 7.h,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Plan the trip to Finland",
+                            style: TextStyle(
+                              color: Colors.indigo,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                "Plan the trip to Finland",
-                                style: TextStyle(
-                                  color: Colors.indigo,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Text(
-                                  "The Family's trip to Finland next \nsummer"),
-                            ],
-                          ),
+                          Text("The Family's trip to Finland next \nsummer"),
                         ],
                       ),
-                      Row(
-                        children: [
-                          const Icon(Icons.notifications),
-                          SizedBox(
-                            width: 7.w,
-                          ),
-                          const Text("Yesterday"),
-                        ],
-                      )
                     ],
                   ),
-                );
-              },
-            ),
-          ],
+                  Row(
+                    children: [
+                      const Icon(Icons.notifications),
+                      SizedBox(
+                        width: 7.w,
+                      ),
+                      const Text("Yesterday"),
+                    ],
+                  )
+                ],
+              ),
+            );
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.add),
+      ),
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 8.w),
+          child: SizedBox(
+            height: 60,
+          ),
+        ),
       ),
     );
   }
